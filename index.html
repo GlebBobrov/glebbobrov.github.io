@@ -12,6 +12,9 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100..900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css" />
+    <script rpc="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <script src="js/main.js"></script>
 </head>
 <body>
     <header class="bg-white">
@@ -36,7 +39,7 @@
                             <li><a href="tomatoall.html" class="text-decoration-none text-dark">Products</a></li>
                             <li><a href="#" class="text-decoration-none text-dark">Services</a></li>
                             <li><a href="#" class="text-decoration-none text-dark">R & D</a></li>
-                            <li><a href="#" class="text-decoration-none text-dark">Contact</a></li>
+                            <li><a href="contactus.html" class="text-decoration-none text-dark">Contact</a></li>
                         </ul>
                     </nav>
                 </div>
@@ -174,11 +177,11 @@
                         <ul class="list-inline m-0">
                             <li class="list-inline-item"><a href="#" class="text-white">PROFILE</a></li>
                             <li class="list-inline-item"><a href="#" class="text-white">MANAGEMENT</a></li>
-                            <li class="list-inline-item"><a href="#" class="text-white">PRODUCTS</a></li>
+                            <li class="list-inline-item"><a href="tomatoall.html" class="text-white">PRODUCTS</a></li>
                             <li class="list-inline-item"><a href="#" class="text-white">R&D</a></li>
                             <li class="list-inline-item"><a href="#" class="text-white">LINKS</a></li>
                             <li class="list-inline-item"><a href="#" class="text-white">SITEMAP</a></li>
-                            <li class="list-inline-item"><a href="#" class="text-white">CONTACT</a></li>
+                            <li class="list-inline-item"><a href="contactus.html" class="text-white">CONTACT</a></li>
                         </ul>
                     </div>
                     <div class="col-md-4">
@@ -202,5 +205,53 @@
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        if (window.innerWidth <= 1024) {
+            const burgerMenu = document.createElement('div');
+            burgerMenu.className = 'burger-menu';
+            burgerMenu.innerHTML = '<span></span><span></span><span></span><span></span>';
+            
+            const mobileMenu = document.createElement('div');
+            mobileMenu.className = 'mobile-menu';
+            
+            const mainNav = document.querySelector('nav ul.list-unstyled.d-flex.justify-content-end.gap-4.m-0');
+            if (mainNav) {
+                const navItems = mainNav.innerHTML;
+                mobileMenu.innerHTML = `
+                    <div class="mobile-menu-header">
+                        <img src="images/agridera-logo.svg" alt="Agridera Logo" style="height: 40px;">
+                        <div class="close-menu">&times;</div>
+                    </div>
+                    <ul class="mobile-nav">
+                        ${navItems}
+                    </ul>
+                `;
+                
+                mainNav.parentNode.insertBefore(burgerMenu, mainNav.nextSibling);
+                document.body.appendChild(mobileMenu);
+                
+                burgerMenu.addEventListener('click', function() {
+                    this.classList.toggle('open');
+                    mobileMenu.classList.toggle('active');
+                });
+                
+                mobileMenu.querySelector('.close-menu').addEventListener('click', function() {
+                    burgerMenu.classList.remove('open');
+                    mobileMenu.classList.remove('active');
+                });
+            }
+        }
+        
+        window.addEventListener('resize', function() {
+            if (window.innerWidth > 1024) {
+                const burger = document.querySelector('.burger-menu');
+                const mobileMenu = document.querySelector('.mobile-menu');
+                if (burger) burger.remove();
+                if (mobileMenu) mobileMenu.remove();
+            }
+        });
+    });
+    </script>
 </body>
 </html>

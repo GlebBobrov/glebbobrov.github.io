@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Agridera Seeds and Agriculture Ltd</title>
   <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@400;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/responsive.css" />
+  <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
 </head>
 
 <body>
@@ -19,143 +21,117 @@
       <div class="searchlinks">
         <a href="index.html">Home</a>
         <a href="#">Company Profile</a>
-        <a href="#">Products</a>
+        <a href="tomatoall.html">Products</a>
         <a href="#">Services</a>
         <a href="#">R&D</a>
-        <a href="#">Contact</a>
+        <a href="contactus.html">Contact</a>
       </div>   
     </div>
   </header>
 
-<div class="tomatosectionwrapper">
-<section class="tomatosection">
-  <h1>Agridera Fresh Market Tomato Hybrids</h1>
-  <h2>××××××</h2>
-  <div>
-    <p>Agridera aims to be one of the world's leading companies in the breeding, production, and marketing of tomato seeds. <b>We invest intensively in research and development to provide 
-      solutions to growers and consumers in numerous countries around the world.</b> In particular, we breed improved disease-resistant cultivars adapted to different markets globally</p>
-    <p>Currently, emphasis is placed on combining Tomato Yellow Leaf Curl Virus (TYLCV) and Tomato Spotted Wilt Virus (TSWV) resistances with other soil borne diseases into superior 
-      tomato breeding lines and hybrids. Moreover, comprehensive efforts are being undertaken to develop varieties resistance to TBRFV virus (Tomato Brown Rugose Fruit Virus). </p>
-    <p>In terms of horticultural traits, breeding is for earliness, different fruit sizes, firmness, red fruit color, flavor, crack resistance, shelf life, 
-      and high/low temperature fruit set. Combinations of quality features and disease resistance are sought in a variety of types, namely round and elongated shapes. </p>
+  <div class="tomatosectionwrapper">
+    <section class="tomatosection">
+      <h1>Agridera Fresh Market Pear Hybrids</h1>
+      <div>
+        <p>Agridera aims to be one of the world's leading companies in the breeding, production, and marketing of pear seeds. <b>We invest intensively in research and development to provide 
+          solutions to growers and consumers in numerous countries around the world.</b> In particular, we breed improved disease-resistant cultivars adapted to different markets globally</p>
+        <p>Currently, emphasis is placed on combining Pear Yellow Leaf Curl Virus (PYLCV) and Pear Spotted Wilt Virus (PSWV) resistances with other soil borne diseases into superior 
+          pear breeding lines and hybrids. Moreover, comprehensive efforts are being undertaken to develop varieties resistance to PBRFV virus (Pear Brown Rugose Fruit Virus). </p>
+        <p>In terms of horticultural traits, breeding is for earliness, different fruit sizes, firmness, fruit color, flavor, crack resistance, shelf life, 
+          and high/low temperature fruit set. Combinations of quality features and disease resistance are sought in a variety of types, namely round and elongated shapes. </p>
+      </div>
+      <div class="highlightedtext">
+        <p>Agirdera Pear breeding programs are focusing on three main segments: 
+        Greenhouse Indeterminate Pears, Open-field Indeterminate Pears, 
+        and Bush Type Open-field Pears.</p>
+      </div>
+    
+      <div class="tomatocontainer">
+        <div class="tomatocolumn">
+            <h3>Greenhouse Pear Breeding Program</h3>
+            <hr>
+            <p><b>This breeding is aimed for the Spanish and Turkish markets.</b> For single and cluster picks, round fruit shape and resistances of PYLCV, PSWV, Nematodes and FORL (Fusarium oxysporum f.sp. radicis-lycopersici). Some hybrids may include more resistances, such as Cladosporium and Leveillula Taurica (Lv).</p>
+        </div>
+    
+        <div class="tomatocolumn">
+            <h3>Open-field Indeterminate Pears</h3>
+            <hr>
+            <p><b>This breeding is for Brazilian, Moroccan, and Turkish markets.</b> The main focus is on large round shape fruits (200 grams plus); and resistances of PYLCV, PSWV, Nematodes and FORL. In the near future, F3 (Fusarium oxysporum f.sp. lycopersici) will be included as basic resistance in our cultivars.</p>
+        </div>
+    
+        <div class="tomatocolumn">
+            <h3>Open-field Bush Type Pears</h3>
+            <hr>
+            <p><b>This breeding is for Mediterranean markets.</b> We breed round and elongated shapes, standard sizes (140-180 grams), and beef sizes (min. 180 grams up to 300 grams and more). We combine the resistances of PYLCV, PSWV and Nematodes as basic resistances in our hybrids. However, some hybrids may include more resistances, such as Cladosporium and Leveillula Taurica (Lv).</p>
+        </div>
+      </div>
+      <div class="highlightedtext">
+        <p>Agridera operates through international and local distributers around the world.</p>
+      </div>
+      
+      <article v-if="products">
+        <div class="image-grid">
+          <div class="card">
+            <a :href="'tomatoone.html#'+products[0].id">
+              <img src="images/img/pear1.png">
+              <div class="text">
+                <h1>{{products[0].title}}</h1>
+                <p>{{products[0].short_text}}</p>
+              </div>
+            </a>
+          </div>
+          <div class="card">
+            <a :href="'tomatoone.html#'+products[1].id">
+              <img src="images/img/pear2.png">
+              <div class="text">
+                <h1>{{products[1].title}}</h1>
+                <p>{{products[1].short_text}}</p>
+              </div>
+            </a>
+          </div>
+          <div class="card">
+            <a :href="'tomatoone.html#'+products[2].id">
+              <img src="images/img/pear3.png">
+              <div class="text">
+                <h1>{{products[2].title}}</h1>
+                <p>{{products[2].short_text}}</p>
+              </div>
+            </a>
+          </div>
+          <div class="card">
+            <a :href="'tomatoone.html#'+products[3].id">
+              <img src="images/img/pear4.png">
+              <div class="text">
+                <h1>{{products[3].title}}</h1>
+                <p>{{products[3].short_text}}</p>
+              </div>
+            </a>
+          </div>
+          <div class="card">
+            <a :href="'tomatoone.html#'+products[4].id">
+              <img src="images/img/pear5.png">
+              <div class="text">
+                <h1>{{products[4].title}}</h1>
+                <p>{{products[4].short_text}}</p>
+              </div>
+            </a>
+          </div>
+         
+        </div>
+      </article>
+    </section>
   </div>
-  <div class="highlightedtext">
-    <p>Agirdera Tomato breeding programs are focusing on three main segments: 
-    Greenhouse Indeterminate Tomatoes, Open-field Indeterminate Tomatoes, 
-    and Bush Type Open-field Tomatoes.</p>
-  </div>
 
-  <div class="tomatocontainer">
-    <div class="tomatocolumn">
-        <h3>Greenhouse Tomato Breeding Program</h3>
-        <hr>
-        <p><b>This breeding is aimed for the Spanish and Turkish markets.</b> For single and cluster picks, round fruit shape and resistances of TYLCV, TSWV, Nematodes and FORL (Fusarium oxysporum f.sp. radicis-lycopersici). Some hybrids may include more resistances, such as Cladosporium and Leveillula Taurica (Lv).</p>
-    </div>
-
-    <div class="tomatocolumn">
-        <h3>Open-field Indeterminate Tomatoes</h3>
-        <hr>
-        <p><b>This breeding is for Brazilian, Moroccan, and Turkish markets.</b> The main focus is on large round shape fruits (200 grams plus); and resistances of TYLCV, TSWV, Nematodes and FORL. In the near future, F3 (Fusarium oxysporum f.sp. lycopersici) will be included as basic resistance in our cultivars.</p>
-    </div>
-
-    <div class="tomatocolumn">
-        <h3>Open-field Bush Type Tomatoes</h3>
-        <hr>
-        <p><b>This breeding is for Mediterranean markets.</b> We breed round and elongated shapes, standard sizes (140-180 grams), and beef sizes (min. 180 grams up to 300 grams and more). We combine the resistances of TYLCV, TSWV and Nematodes as basic resistances in our hybrids. However, some hybrids may include more resistances, such as Cladosporium and Leveillula Taurica (Lv).</p>
-    </div>
-
-</div>
-  <div class="highlightedtext">
-    <p>Agridera operates through international and local distributers around the world.</p>
-  </div>
-
-  <div class="image-grid">
-    <div class="card">
-      <a href="#">
-        <img src="images/tomato1.png">
-        <div class="text">
-          <h1>TAG 1000 (TAG 853)</h1> 
-          <p>Tomato Determinate Red Standard Round</p>
-        </div>
-      </a>
-    </div>
-    <div class="card">
-      <a href="#">
-        <img src="images/tomato2.png">
-        <div class="text">
-          <h1>TAG 1001 (TAG 855)</h1> 
-          <p>Tomato Determinate Red Standard Round</p>
-        </div>
-      </a>
-    </div>
-    <div class="card">
-      <a href="#">
-        <img src="images/tomato3.png">
-        <div class="text">
-          <h1>TAG 1002 (TAG 809)</h1> 
-          <p>Tomato Determinate Red Standard Round</p>
-        </div>
-      </a>
-    </div>
-    <div class="card">
-      <a href="#">
-        <img src="images/tomato4.png">
-        <div class="text">
-          <h1>TAG 1003 (TAG 834 )</h1> 
-          <p>Tomato Determinate Red Standard Round</p>
-        </div>
-      </a>
-    </div>
-    <div class="card">
-      <a href="#">
-        <img src="images/tomato5.png">
-        <div class="text">
-          <h1>TAG 1004 (TAG 848)</h1> 
-          <p>Tomato Determinate Red BEEF Round</p>
-        </div>
-      </a>
-    </div>
-    <div class="card">
-      <a href="#">
-        <img src="images/tomato6.png">
-        <div class="text">
-          <h1>TAG 1005 (TAG 800)</h1> 
-          <p>Tomato Determinate Red Standard Round</p>
-        </div>
-      </a>
-    </div>
-    <div class="card">
-      <a href="#">
-        <img src="images/tomato7.png">
-        <div class="text">
-          <h1> TAG 1006 (TAG 898)</h1> 
-          <p>Tomato Determinate Red Elongated</p>
-        </div>
-      </a>
-    </div>
-    <div class="card">
-      <a href="#">
-        <img src="images/tomato8.png">
-        <div class="text">
-          <h1>TAG 1007 (TAG 816)</h1> 
-          <p>Tomato Determinate Red Elongated</p>
-        </div>
-      </a>
-    </div>
-  </div>
-</section>
-</div>
-
-<footer class="footermenu">
+  <footer class="footermenu">
     <nav>
       <ul>
         <li><a href="#">PROFILE</a></li>
         <li><a href="#">MANAGEMENT</a></li>
-        <li><a href="#">PRODUCTS</a></li>
+        <li><a href="tomatoall.html">PRODUCTS</a></li>
         <li><a href="#">R&D</a></li>
         <li><a href="#">LINKS</a></li>
         <li><a href="#">SITEMAP</a></li>
-        <li><a href="#">CONTACT</a></li>
+        <li><a href="contactus.html">CONTACT</a></li>
       </ul>
     </nav>
     <div class="footerimages">
@@ -168,8 +144,57 @@
   </footer>
 
   <footer class="footer">
-    <p>AGRIDERA SEEDS & AGRICULTURE LTD. В© 2020</p>
+    <p>AGRIDERA SEEDS & AGRICULTURE LTD. © 2020</p>
   </footer>
 
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        if (window.innerWidth <= 1024) {
+            const burgerMenu = document.createElement('div');
+            burgerMenu.className = 'burger-menu';
+            burgerMenu.innerHTML = '<span></span><span></span><span></span><span></span>';
+            
+            const mobileMenu = document.createElement('div');
+            mobileMenu.className = 'mobile-menu';
+            
+            const mainNav = document.querySelector('nav ul.list-unstyled.d-flex.justify-content-end.gap-4.m-0');
+            if (mainNav) {
+                const navItems = mainNav.innerHTML;
+                mobileMenu.innerHTML = `
+                    <div class="mobile-menu-header">
+                        <img src="images/agridera-logo.svg" alt="Agridera Logo" style="height: 40px;">
+                        <div class="close-menu">&times;</div>
+                    </div>
+                    <ul class="mobile-nav">
+                        ${navItems}
+                    </ul>
+                `;
+                
+                mainNav.parentNode.insertBefore(burgerMenu, mainNav.nextSibling);
+                document.body.appendChild(mobileMenu);
+                
+                burgerMenu.addEventListener('click', function() {
+                    this.classList.toggle('open');
+                    mobileMenu.classList.toggle('active');
+                });
+                
+                mobileMenu.querySelector('.close-menu').addEventListener('click', function() {
+                    burgerMenu.classList.remove('open');
+                    mobileMenu.classList.remove('active');
+                });
+            }
+        }
+        
+        window.addEventListener('resize', function() {
+            if (window.innerWidth > 1024) {
+                const burger = document.querySelector('.burger-menu');
+                const mobileMenu = document.querySelector('.mobile-menu');
+                if (burger) burger.remove();
+                if (mobileMenu) mobileMenu.remove();
+            }
+        });
+    });
+  </script>
+  <script src="js/main.js"></script>
 </body>
 </html>
